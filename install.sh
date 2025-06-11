@@ -24,11 +24,29 @@ CONFIG_FOLDERS=(
   wofi
 )
 
-echo "Creating symlinks to ~/.config/ from $DOTFILES_DIR"
+# Rainbow colors
+colors=('\033[0;31m' '\033[0;33m' '\033[1;33m' '\033[0;32m' '\033[0;34m' '\033[0;35m' '\033[0;36m')
+RESET='\033[0m'
+
+# Small rainbow header
+echo
+echo -e "${colors[0]}==${colors[1]}= ${colors[2]}DOTFILES ${colors[3]}INSTALLER ${colors[4]}==${colors[5]}=${colors[6]}=${RESET}"
+echo
+
+echo -e "${colors[6]}Linking configs from:${RESET} $DOTFILES_DIR"
+echo
 
 for folder in "${CONFIG_FOLDERS[@]}"; do
   ln -sf "$DOTFILES_DIR/$folder" "$HOME/.config/$folder"
-  echo "Linked: $folder"
+  echo -e "${colors[3]}[+]:${RESET} Linked $folder"
 done
 
-echo "✅ All symlinks created!"
+# DONE ASCII Art at the end
+echo
+echo -e "${colors[0]}  ____   ___  _   _ _____ ${RESET}"
+echo -e "${colors[1]} |  _ \ / _ \| \ | | ____|${RESET}"
+echo -e "${colors[2]} | | | | | | |  \| |  _|  ${RESET}"
+echo -e "${colors[3]} | |_| | |_| | |\  | |___ ${RESET}"
+echo -e "${colors[4]} |____/ \___/|_| \_|_____|${RESET}"
+echo
+echo -e "${colors[5]} ✅ DONE — All symlinks created successfully! ${RESET}"
