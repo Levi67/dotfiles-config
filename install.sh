@@ -28,7 +28,6 @@ CONFIG_FOLDERS=(
 colors=('\033[0;31m' '\033[0;33m' '\033[1;33m' '\033[0;32m' '\033[0;34m' '\033[0;35m' '\033[0;36m')
 RESET='\033[0m'
 
-# Small rainbow header
 echo
 echo -e "${colors[0]}==${colors[1]}= ${colors[2]}DOTFILES ${colors[3]}INSTALLER ${colors[4]}==${colors[5]}=${colors[6]}=${RESET}"
 echo
@@ -40,6 +39,29 @@ for folder in "${CONFIG_FOLDERS[@]}"; do
   ln -sf "$DOTFILES_DIR/$folder" "$HOME/.config/$folder"
   echo -e "${colors[3]}[+]:${RESET} Linked $folder"
 done
+
+# Read Firefox profile path from config file
+CONFIG_FILE="./config.json"
+if [[ ! -f "$CONFIG_FILE" ]]; then
+  echo -e "${colors[0]}Error:${RESET} Firefox config file $CONFIG_FILE not found!"
+  exit 1
+fi
+
+FIREFOX_PROFILE_DIR=$(jq -r '.firefox_profile_path' "$CONFIG_FILE")
+DOTFILES_CHROME_DIR="$DOTFILES_DIR/chrome"
+
+if [[ ! -d "$FIREFOX_PROFILE_DIR" ]]; then
+  echo -e "${colors[0]}Error:${RESET} Firefox profile directory $FIREFOX_PROFILE_DIR does not exist!"
+  exit 1
+fi
+
+if [ -d "$FIREFOX_PROFILE_DIR/chrome" ] || [ -L "$FIREFOX_PROFILE_DIR/chrome" ]; then
+  echo -e "${colors[1]}Backing up existing Firefox chrome folder to chrome.backup${RESET}"
+  mv "$FIREFOX_PROFILE_DIR/chrome" "$FIREFOX_PROFILE_DIR/chrome.backup"
+fi
+
+ln -sfn "$DOTFILES_CHROME_DIR" "$FIREFOX_PROFILE_DIR/chrome"
+echo -e "${colors[2]}[+]:${RESET} Linked Firefox chrome folder"
 
 # DONE ASCII Art at the end
 echo
