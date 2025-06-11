@@ -36,39 +36,25 @@ echo -e "${colors[6]}Linking configs from:${RESET} $DOTFILES_DIR"
 echo
 
 for folder in "${CONFIG_FOLDERS[@]}"; do
-  ln -sf "$DOTFILES_DIR/$folder" "$HOME/.config/$folder"
+  TARGET="$HOME/.config/$folder"
+  SOURCE="$DOTFILES_DIR/$folder"
+
+  if [[ -e "$TARGET" && ! -L "$TARGET" ]]; then
+    BACKUP="$TARGET.backup.$(date +%s)"
+    mv "$TARGET" "$BACKUP"
+    echo -e "${colors[1]}🔸 Backed up $TARGET → $BACKUP${RESET}"
+  fi
+
+  ln -sfn "$SOURCE" "$TARGET"
   echo -e "${colors[3]}[+]:${RESET} Linked $folder"
 done
-
-# Read Firefox profile path from config file
-CONFIG_FILE="./config.json"
-if [[ ! -f "$CONFIG_FILE" ]]; then
-  echo -e "${colors[0]}Error:${RESET} Firefox config file $CONFIG_FILE not found!"
-  exit 1
-fi
-
-FIREFOX_PROFILE_DIR=$(jq -r '.firefox_profile_path' "$CONFIG_FILE")
-DOTFILES_CHROME_DIR="$DOTFILES_DIR/chrome"
-
-if [[ ! -d "$FIREFOX_PROFILE_DIR" ]]; then
-  echo -e "${colors[0]}Error:${RESET} Firefox profile directory $FIREFOX_PROFILE_DIR does not exist!"
-  exit 1
-fi
-
-if [ -d "$FIREFOX_PROFILE_DIR/chrome" ] || [ -L "$FIREFOX_PROFILE_DIR/chrome" ]; then
-  echo -e "${colors[1]}Backing up existing Firefox chrome folder to chrome.backup${RESET}"
-  mv "$FIREFOX_PROFILE_DIR/chrome" "$FIREFOX_PROFILE_DIR/chrome.backup"
-fi
-
-ln -sfn "$DOTFILES_CHROME_DIR" "$FIREFOX_PROFILE_DIR/chrome"
-echo -e "${colors[2]}[+]:${RESET} Linked Firefox chrome folder"
 
 # DONE ASCII Art at the end
 echo
 echo -e "${colors[0]}  ____   ___  _   _ _____ ${RESET}"
-echo -e "${colors[1]} |  _ \ / _ \| \ | | ____|${RESET}"
-echo -e "${colors[2]} | | | | | | |  \| |  _|  ${RESET}"
-echo -e "${colors[3]} | |_| | |_| | |\  | |___ ${RESET}"
-echo -e "${colors[4]} |____/ \___/|_| \_|_____|${RESET}"
+echo -e "${colors[1]} |  _ \\ / _ \\| \\ | | ____|${RESET}"
+echo -e "${colors[2]} | | | | | | |  \\| |  _|  ${RESET}"
+echo -e "${colors[3]} | |_| | |_| | |\\  | |___ ${RESET}"
+echo -e "${colors[4]} |____/ \\___/|_| \\_|_____|${RESET}"
 echo
 echo -e "${colors[5]} ✅ DONE — All symlinks created successfully! ${RESET}"
