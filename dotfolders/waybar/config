@@ -1,121 +1,139 @@
-{
-  "layer": "bottom",
+{ 
+
   "position": "top",
-  "output": ["*"],
-  "modules-left": ["group/workspaces", "group/media"],
-  "modules-center": ["group/datetime"],
-  "modules-right": ["bluetooth", "group/system", "custom/power"],
-  
-  "group/workspaces": {
-    "orientation": "horizontal",
-    "modules": ["custom/ws-1", "custom/ws-2", "custom/ws-3"]
-  },
+  "exlusive": "true",
+  "passthrough": "true",
+  "gtk-layer-shell": "true",
+  "margin-top": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "height": 41,
+  "modules-left": [
+    "cpu",
+    "memory",
+    "disk"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "clock",
+    "separator"
+  ],
 
 
-   "bluetooth": {
-        "format": "\uf293",
-        "format-disabled": "\uf293",
-        "format-off": "\uf293",
-        "format-on": "\uf293",
-        "format-connected": "\uf293",
-        "format-connected-battery": "\uf293",
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "on-click": "blueberry"
-    },
-  
-  "group/media": {
-    "orientation": "horizontal", 
-    "modules": ["mpris", "custom/cava"]
+  "tray": {
+    "icon-size": 16,
+    "icon-theme": "Papirus",
+    "spacing": 2, 
   },
-  
-  "group/datetime": {
-    "orientation": "horizontal",
-    "modules": ["clock", "custom/weather"]
+   "custom/spacer": {
+        "format": " ", // Empty space
+        "tooltip": false
   },
-  
-  "group/system": {
-    "orientation": "horizontal",
-    "modules": ["network", "cpu", "pulseaudio"]
+  "separator": {
+    "format": " | "
   },
-
-  "clock": {
-    "format": "{:%H:%M}",
-    "tooltip-format": "{:%A, %B %d %Y}",
-    "interval": 1,
-    "class": "icon-box"
-  },
-  
-  "network": {
-    "format-wifi": "\uf1eb {essid} \uf093 {bandwidthUpBits} \uf019 {bandwidthDownBits}",
-    "format-ethernet": "\uf796 \uf093 {bandwidthUpBits} \uf019 {bandwidthDownBits}",
-    "format-linked": "\uf0c1 \uf093 {bandwidthUpBits} \uf019 {bandwidthDownBits}",
-    "format-disconnected": "\uf127 Disconnected",
-    "tooltip-format": "Interface: {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits}\nDown: {bandwidthDownBits}",
-    "interval": 1
-  },
-  
-  "custom/ws-1": {
-    "exec": "~/.config/waybar/scripts/ws-active.sh 1",
-    "return-type": "json",
-    "interval": 1,
-    "on-click": "~/.config/waybar/scripts/switch_workspaces.sh 1"
-  },
-  
-  "custom/ws-2": {
-    "exec": "~/.config/waybar/scripts/ws-active.sh 2",
-    "return-type": "json",
-    "interval": 1,
-    "on-click": "~/.config/waybar/scripts/switch_workspaces.sh 2"
-  },
-  
-  "custom/ws-3": {
-    "exec": "~/.config/waybar/scripts/ws-active.sh 3",
-    "return-type": "json",
-    "interval": 1,
-    "on-click": "~/.config/waybar/scripts/switch_workspaces.sh 3"
-  },
-  
-  "cpu": {
-    "format": "{icon} {usage}%",
-    "format-icons": ["\uf2db"],
-    "tooltip": true,
-    "interval": 1,
-    "on-click": "kitty btop"
-  },
-  
-  "custom/weather": {
-    "exec": "/home/levi/.config/waybar/scripts/weather.sh",
-    "interval": 600,
+  "hyprland/window": {
     "format": "{}",
-    "on-click": "~/.config/waybar/scripts/open_weather_popup.sh",
-    "tooltip": false
-  },
-  
-  "mpris": {
-    "format": "{player_icon}   - {title}",
-    "format-disconnected": "\uf025 No media",
-    "player-icons": {
-      "default": "\uf025"
+    "max-length": 35,
+    "rewrite": {
+      "": "Harsh"
     },
-    "max-length": 30,
-    "interval": 0.5,
-    "class": "icon-box"
+    "separate-outputs": true
   },
-  
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "active": "",
+      "urgent": "",
+      "persistent": "",
+      "focused": "",
+      "default": "",
+
+        },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 9,
+      "DP-1": 9
+    }
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "<span color='#89b4fa'>󰥔 </span><span color='#cdd6f4'>{:%H:%M | %a %d %b}</span>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+
+  "cpu": {
+    "format": "<span color='#89b4fa'>󰍛</span> <span color='#cdd6f4'>{usage}%</span>",
+    "interval": 1,
+    "format-alt-click": "click",
+    "format-alt": "<span color='#00FF00'>{icon0}{icon1}{icon2}{icon3}</span> <span color='#FFFFFF'>{usage:>2}%</span> <span color='#00FF00'>󰍛</span>",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "gnome-system-monitor"
+  },
+  "memory": {
+    "interval": 3,
+    "format": "<span color='#f38ba8'> </span> <span color='#cdd6f4'>{used:0.1f}G</span>"
+  },
+   
+
   "pulseaudio": {
-    "format": "\uf028    {volume}%",
-    "scroll-step": 5,
-    "class": "icon-box"
+    "format": "<span color='#a6e3a1'>{icon} </span><span color='#cdd6f4'>{volume}%</span>",
+    "format-bluetooth": "<span color='#a6e3a1'>{icon}</span>  <span color='#cdd6f4'>{volume}%</span>",
+    "tooltip": false,
+    "format-muted": "<span color='#f38ba8'>󰝟</span>",
+    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 10%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 10%-",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        "",
+      ]
+    }
   },
-  
-  "custom/power": {
-    "format": "⏻",
-    "tooltip": "Power Menu",
-    "on-click": "~/.config/waybar/scripts/power_menu.sh"
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "<span color='#f38ba8'> </span><span color='#cdd6f4'>{volume}%</span>",
+    "format-source-muted": "",
+    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-",
   },
-  
-  "style": "/home/levi/.config/waybar/style.css"
+
+   "hyprland/language": {
+
+  "format": "<span color='#f9e2af'>󰌌</span> <span color='#cdd6f4'>{}</span>",
+
+  "format-ar": "ara",
+
+  "format-en": "eng",
+
+},
+  "disk":{
+	"interval": 3,
+  "path": "/home",
+	"format": "<span color='#a6e3a1'> </span><span color='#cdd6f4'>{free}</span>",
+	"unit": "GB"
+},
 }

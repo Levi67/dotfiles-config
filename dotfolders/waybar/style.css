@@ -1,192 +1,196 @@
+
+* {
+    border: none;
+    border-radius: 10px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 15px;
+    min-height: 0;
+}
+
 window#waybar {
- background: transparent;
-border: none;
-box-shadow: none;
-}
-/* Style the group containers with progressive darkening */
-.modules-left > widget > box {
-background-color: #6AB8F7; /* Pastel medium dark blue for leftmost modules */
-border-radius: 10px;
-margin: 4px 6px;
-padding: 0px 4px;
-}
-.modules-center > widget > box {
-background-color: #90caf9; /* Pastel medium blue for center modules */
-border-radius: 10px;
-margin: 4px 6px;
-padding: 0px 4px;
-}
-.modules-right > widget > box {
-background-color: #A6D4FA; /* Pastel blue-green (more blueish) for rightmost modules */
-border-radius: 10px;
-margin: 4px 6px;
-padding: 0px 4px;
-}
-/* Individual module styling inside groups - remove individual backgrounds */
-#pulseaudio, #clock, #mpris, #custom-power, #custom-weather, #custom-easyeffects, #cpu, #network, #bluetooth{
-padding: 6px 10px;
-margin: 0px 2px; /* Reduced margin since they're now grouped */
-border-radius: 0px; /* Remove individual border radius */
-background-color: transparent; /* Remove individual backgrounds */
-font-weight: bold;
+    background: rgba(21, 18, 27, 0);
+    color: #cdd6f4;
 }
 
-/* Fallback styling for modules that don't get wrapped in boxes */
+tooltip {
+    background: #000000;
+    border-radius: 7px;
+    border-width: 2.5px;
+    border-style: solid;
+    border-color: #8aadf4;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+#workspaces button {
+    color: #313244;
+    margin-right: 5px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#workspaces button.active {
+    color: #89b4fa;
+}
+
+#workspaces button.focused {
+    color: #a6adc8;
+    background: #eba0ac;
+    border-radius: 13px;
+}
+
+
+
+#workspaces button.persistent {
+    color: #f9e2af;
+}
+
+
+#workspaces button.empty {
+    color: #313244;
+}
+
+#workspaces button.active,
+#workspaces button.visible {
+    color: #89b4fa;
+    box-shadow: inset 0 -1px #1e1e2e;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+#custom-weather,
+#language,
+#cpu,
+#window,
+#clock,
+#pulseaudio,
+#pulseaudio.microphone,
+#workspaces,
+#tray,
+#memory,
+#disk,
+#tray {
+    background: #1e1e2e;
+    opacity: 1.0;
+    padding: 1.5px 7px 1.5px 7px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 13px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#workspaces {
+    background: #1e1e2e;
+    border-radius: 13px;
+    margin-left: 5px;
+    padding-right: 0px;
+}
+
+#window {
+    border-radius: 7px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#clock {
+    color: #a6e3a1;
+    border-radius: 0px 13px 13px 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#network {
+    color: #f9e2af;
+    border-radius: 7px 7px 7px 7px;
+    margin-right: 5px;
+}
+
+#custom-notifications {
+    color: #f9e2af;
+    border-radius: 7px 7px 7px 7px;
+    padding-left: 9px;
+    padding-right: 15px;
+    margin-left:  2px;
+    margin-right: 2px;
+
+}
+
+#custom-updates {
+    color: #89b4fa;
+    border-radius: 7px 7px 7px 7px;
+    border-left:  0px;
+    border-right: 0px;
+    margin-left:  2px;
+    margin-right: 2px;
+}
+
+#custom-player {
+ color: #cba6f7;
+ border-radius: 7px 7px 7px 7px;
+ padding-left: 4px;
+ margin-left:  5px;
+ margin-right: 5px;
+}
+
+#memory {
+    color: #89b4fa;
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+    margin-right:0px;
+}
+
+#disk {
+    color: #f9e2af;
+    border-radius: 0px 13px 13px 0px;
+    margin-left: 0px;
+}
+
+
 #bluetooth {
-background-color: #A6D4FA; /* Pastel blue-green for right modules */
-border-radius: 10px;
-margin: 4px 6px;
-padding: 6px 10px;
-font-weight: bold;
-font-family: "Font Awesome 6 Free", sans-serif;
-font-size: 16px;
+  color: #89b4fa;
+  border-radius: 0px 13px 13px 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+} 
+
+#pulseaudio {
+  color: #89b4fa;
+  border-radius: 13px 0px 0px 13px;
+  padding-left:10px;
+  margin-right:0px;
+  margin-left: 0px;
 }
 
-#bluetooth:hover {
-background-color: #6DB9F7; /* Darker pastel blue-green hover */
+#pulseaudio.microphone {
+    color: #cba6f7;
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
-/* Bluetooth icon styling with Font Awesome 6 */
-#bluetooth {
-color: #000080; /* Dark blue when on/connected */
+#language {
+   border-radius: 13px 0px 0px 13px;
+   margin-right:0px;
 }
 
-/* Bluetooth disabled state */
-#bluetooth.disabled {
-color: #808080; /* Gray when disabled/off */
+#cpu {
+   border-radius: 13px 0px 0px 13px;
+   padding-left:10px;
+   margin-right:0px;
+   margin-left: 0px;
 }
-/* Left modules get opposite of #7986cb which is #867934 */
-.modules-left #mpris,
-.modules-left #custom-cava {
-color: #867934;
+
+#custom-weather {
+   border-radius: 13px 13px 13px 13px;
+   margin-right: 0px
+   
 }
-/* Center modules get opposite of #90caf9 which is #6f3506 */
-.modules-center #clock,
-.modules-center #custom-weather {
-color: #6f3506;
-}
-/* Right modules get opposite of #80cbc4 which is #7f343b */
-.modules-right #network,
-.modules-right #cpu,
-.modules-right #pulseaudio,
-.modules-right #bluetooth {
-color: #7f343b;
-}
-/* Keep power button separate with its own styling */
-#custom-power {
-background-color: #A6D4FA; /* Match new pastel blue-green right side color */
-border-radius: 10px;
-margin: 4px 6px;
-padding: 6px 10px;
-color: #ffffff;
-}
-/* Icon recolors with font - match their respective opposites */
-.modules-right #network {
-color: #000080;
-}
-.modules-right #pulseaudio .icon,
-.modules-left #mpris .icon {
-font-family: "Font Awesome 6 Free", sans-serif;
-font-weight: 900;
-}
-.modules-right #pulseaudio .icon {
-color: #000080;
-}
-.modules-left #mpris .icon {
-color: #000080;
-}
-.modules-right #pulseaudio, .modules-left #mpris {
-font-family: "Inter", sans-serif;
-}
-.modules-right #pulseaudio {
-color: #000080;
-}
-.modules-left #mpris {
-color: #000080;
-}
-.modules-center #custom-weather {
-color: #000080;
-}
-/* Per module colors - opposite of their background colors */
-.modules-right #pulseaudio {
-color: #000080; /* Opposite of #80cbc4 */
-}
-.modules-left #mpris {
-color: #000080; /* Opposite of #7986cb */
-}
-.modules-right #cpu {
-color: #000080; /* Opposite of #80cbc4 */
-}
-.modules-center #clock {
-color: #000080; /* Opposite of #90caf9 */
-}
-/* Bluetooth styling - matches other right modules */
-.modules-right #bluetooth {
-color: #000080; /* Consistent with other right modules */
-font-family: "Inter", sans-serif;
-}
-.modules-right #bluetooth .icon {
-font-family: "Font Awesome 6 Free", sans-serif;
-font-weight: 900;
-color: #000080; /* Dark blue when on */
-}
-/* Bluetooth state-specific styling */
-#bluetooth.disabled {
-color: #808080; /* Gray text when disabled */
-}
-#bluetooth.disabled .icon {
-color: #808080; /* Gray icon when disabled */
-}
-#bluetooth.connected {
-color: #000080; /* Dark blue text when connected */
-}
-#bluetooth.connected .icon {
-color: #000080; /* Dark blue icon when connected */
-}
-/* Default bluetooth state (on but not connected) */
-#bluetooth {
-color: #000080; /* Dark blue by default */
-}
-#bluetooth .icon {
-color: #000080; /* Dark blue icon by default */
-}
-#custom-power {
-color: #000080; /* Opposite of #80cbc4 (power button background) */
-font-size: 19px;
-}
-/* Group hover effects - progressively darker on hover */
-.modules-left > widget > box:hover {
-background-color: #2697F4; /* Darker pastel hover for left */
-}
-.modules-center > widget > box:hover {
-background-color: #64b5f6; /* Darker pastel hover for center */
-}
-.modules-right > widget > box:hover {
-background-color: #6DB9F7; /* Darker pastel blue-green hover for right */
-}
-#custom-power:hover {
-background-color: #6DB9F7; /* Darker pastel blue-green hover for power button */
-}
-/* Workspace modules styling - now grouped, darkest since they're leftmost */
-#custom-ws-1, #custom-ws-2, #custom-ws-3 {
-background-color: transparent;
-border-radius: 0px;
-padding: 6px 10px;
-margin: 0px 2px;
-color: #000080;
-font-weight: bold;
-font-family: "Inter", sans-serif;
-}
-#custom-ws-1.active,
-#custom-ws-2.active,
-#custom-ws-3.active {
-background-color: #2697F4; /* Darker pastel blue for active workspace */
-color: #000080;
-border-radius: 6px; /* Small radius for active workspace highlight */
-}
-#custom-ws-1.active:hover,
-#custom-ws-2.active:hover,
-#custom-ws-3.active:hover {
-background-color: #2697F4;
-color: #ffffff;
-}
+
+
