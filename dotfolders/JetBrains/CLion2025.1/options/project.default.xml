@@ -1,0 +1,20 @@
+<application>
+  <component name="ProjectManager">
+    <defaultProject>
+      <component name="CMakePythonSetting">
+        <option name="pythonIntegrationState" value="YES" />
+      </component>
+      <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.CMake"
+  }
+}]]></component>
+      <component name="WindowStateProjectService">
+        <state x="785" y="221" key="SettingsEditor" timestamp="1748507258338">
+          <screen x="0" y="0" width="2560" height="1440" />
+        </state>
+        <state x="785" y="221" key="SettingsEditor/0.0.2560.1440/5120.0.2560.1440/2560.0.2560.1440" timestamp="1748507258338" />
+      </component>
+    </defaultProject>
+  </component>
+</application>

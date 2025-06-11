@@ -1,0 +1,4 @@
+-Xmx2048m
+-Dide.managed.by.toolbox=/home/levi/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
+-Dtoolbox.notification.token=6d1eca93-1a32-492c-9b55-3d87a35519fb
+-Dtoolbox.notification.portFile=/home/levi/.cache/JetBrains/Toolbox/ports/765caafa-912a-4b12-8695-ed2d22f717d9.port

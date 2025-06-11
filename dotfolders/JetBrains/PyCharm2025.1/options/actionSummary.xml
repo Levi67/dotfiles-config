@@ -1,0 +1,121 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <e n="$SelectAll">
+      <i c="2" l="1748968314077" />
+    </e>
+    <e n="$Undo">
+      <i c="3" l="1748968261081" />
+    </e>
+    <e n="Annotate">
+      <i c="2" l="1748968535266" />
+    </e>
+    <e n="EditorBackSpace">
+      <i c="24" l="1748968389806" />
+    </e>
+    <e n="EditorChooseLookupItem">
+      <i c="1" l="1748968401849" />
+    </e>
+    <e n="EditorChooseLookupItemReplace">
+      <i c="2" l="1748968326216" />
+    </e>
+    <e n="EditorCopy">
+      <i c="8" l="1748968429453" />
+    </e>
+    <e n="EditorCut">
+      <i c="2" l="1748968237934" />
+    </e>
+    <e n="EditorDeleteToWordStart">
+      <i c="18" l="1748968543380" />
+    </e>
+    <e n="EditorEnter">
+      <i c="5" l="1748968245202" />
+    </e>
+    <e n="EditorEscape">
+      <i c="1" l="1748968127009" />
+    </e>
+    <e n="EditorLeft">
+      <i c="8" l="1748968380857" />
+    </e>
+    <e n="EditorNextWord">
+      <i c="3" l="1748968397765" />
+    </e>
+    <e n="EditorPaste">
+      <i c="11" l="1748968481110" />
+    </e>
+    <e n="EditorPreviousWord">
+      <i c="2" l="1748968382537" />
+    </e>
+    <e n="EditorRight">
+      <i c="6" l="1748968389043" />
+    </e>
+    <e n="EditorStartNewLine">
+      <i c="2" l="1748968276356" />
+    </e>
+    <e n="EditorTab">
+      <i c="1" l="1748968150747" />
+    </e>
+    <e n="EditorUp">
+      <i c="3" l="1748968245641" />
+    </e>
+    <e n="HideAllWindows">
+      <i c="1" l="1748968284700" />
+    </e>
+    <e n="InsertInlineCompletionAction">
+      <i c="1" l="1748968436480" />
+    </e>
+    <e n="NewElement">
+      <i c="2" l="1748968227197" />
+    </e>
+    <e n="NewPythonFile">
+      <i c="2" l="1748968228173" />
+    </e>
+    <e n="ProblemsView.QuickFixes">
+      <i c="2" l="1748968416834" />
+    </e>
+    <e n="RedesignedRunConfigurationSelector">
+      <i c="3" l="1748965324357" />
+    </e>
+    <e n="Run">
+      <i c="3" l="1748968163307" />
+    </e>
+    <e n="SaveAll">
+      <i c="86" l="1748968549414" />
+    </e>
+    <e n="Stop">
+      <i c="1" l="1748966484849" />
+    </e>
+    <e n="WelcomeScreen.OpenDirectoryProject">
+      <i c="1" l="1748965287610" />
+    </e>
+    <e n="com.intellij.execution.actions.RunConfigurationsComboBoxAction$RunCurrentFileAction">
+      <i c="1" l="1748965322152" />
+    </e>
+    <e n="com.intellij.execution.ui.RunToolbarPopupKt$createCurrentFileWithInlineActions$2">
+      <i c="1" l="1748965326270" />
+    </e>
+    <e n="com.intellij.ide.startup.importSettings.chooser.productChooser.JbChooserAction">
+      <i c="1" l="1748965280435" />
+    </e>
+    <e n="com.intellij.ide.startup.importSettings.chooser.settingChooser.SettingChooserItemAction">
+      <i c="1" l="1748965282140" />
+    </e>
+    <e n="com.intellij.notification.NotificationAction$Simple">
+      <i c="1" l="1748965317341" />
+    </e>
+    <e n="com.intellij.openapi.editor.impl.EditorMarkupModelImpl$TrafficLightAction">
+      <i c="6" l="1748968422930" />
+    </e>
+    <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+      <i c="1" l="1748965315275" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.SquareAnActionButton">
+      <i c="7" l="1748968289550" />
+    </e>
+    <e n="com.intellij.toolWindow.ToolWindowHeader$HideAction">
+      <i c="1" l="1748965688767" />
+    </e>
+    <e n="com.jetbrains.python.sdk.PySdkPopupFactory$SwitchToSdkAction">
+      <i c="1" l="1748965318746" />
+    </e>
+  </component>
+</application>

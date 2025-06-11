@@ -1,0 +1,49 @@
+<application>
+  <component name="AcceptanceRateFactors">
+    <option name="lastSelectionTime" value="1748968436481" />
+    <option name="lastShowUpTime" value="1748968436481" />
+    <option name="prevSelected" value="true" />
+    <selectionCounts>
+      <entry key="1" value="1.0" />
+      <entry key="24" value="1.0" />
+      <entry key="168" value="1.0" />
+    </selectionCounts>
+    <showUpCounts>
+      <entry key="1" value="10.698081792585826" />
+      <entry key="24" value="10.987177829207825" />
+      <entry key="168" value="10.998166951826843" />
+    </showUpCounts>
+  </component>
+  <component name="CompletionFinishedType">
+    <dailyDataMap>
+      <entry key="2025-06-03">
+        <DailyData>
+          <option name="explicitCancel" value="4" />
+          <option name="invalidated" value="6" />
+          <option name="selected" value="1" />
+        </DailyData>
+      </entry>
+    </dailyDataMap>
+  </component>
+  <component name="PrefixLength">
+    <dailyDataMap>
+      <entry key="2025-06-03">
+        <DailyData>
+          <prefixLengths>
+            <entry key="5" value="1" />
+          </prefixLengths>
+        </DailyData>
+      </entry>
+    </dailyDataMap>
+  </component>
+  <component name="TimeBetweenTyping">
+    <dailyDataMap>
+      <entry key="2025-06-03">
+        <DailyData>
+          <option name="count" value="119" />
+          <option name="totalTime" value="127968" />
+        </DailyData>
+      </entry>
+    </dailyDataMap>
+  </component>
+</application>

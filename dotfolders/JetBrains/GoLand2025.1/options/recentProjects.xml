@@ -1,0 +1,25 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/Documents/Codes">
+          <value>
+            <RecentProjectMetaInfo frameTitle="Codes – main.go" opened="true" projectWorkspaceId="2y6G8zETij0DAp5ZaViTnoGgalT">
+              <option name="activationTimestamp" value="1749147617005" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="GO-251.26094.127" />
+              <option name="buildTimestamp" value="1749013440000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="3" />
+              </option>
+              <frame x="2572" y="57" width="2536" height="1371" />
+              <option name="productionCode" value="GO" />
+              <option name="projectOpenTimestamp" value="1749147454113" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastOpenedProject" value="$USER_HOME$/Documents/Codes" />
+  </component>
+</application>
